@@ -7,6 +7,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- Load properties -->
+    <context:property-placeholder location="classpath:sport.properties"/>
     <!-- Define your beans here -->
     
     <bean id="myFortune"
@@ -14,10 +16,23 @@
     
     </bean>
     
+    <bean id="myRadnomFortune"
+    	class="com.luv2code.springdemo.RandomFortuneService">
+    
+    </bean>
+    
     <bean id="myCoach"
     	class="com.luv2code.springdemo.TrackCoach">
     	<!-- setup construction injections -->
-    	<constructor-arg ref="myFortune"/>
+    	<constructor-arg ref="myRadnomFortune"/>
+    </bean>
+    
+    <bean id = "myCricketCoach"
+    	class = "com.luv2code.springdemo.CricketCoach">
+    <!-- Setup Setter injection  -->
+    <property name="fortuneService" ref="myRadnomFortune" />
+    <property name="emailAddress" value="${foo.email}" />    
+    <property name="team" value="${foo.team}" />    
     </bean>
 
 </beans>

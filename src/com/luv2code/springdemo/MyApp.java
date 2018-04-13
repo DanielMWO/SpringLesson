@@ -6,8 +6,11 @@ public class MyApp {
 		
 		Coach theCoach = new TrackCoach();
 		
-		System.out.println(theCoach.getDailyWorkout());
-
+		/*System.out.println(theCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());*/
+		
+		RandomFortuneService przepowiednia = new RandomFortuneService();
+		System.out.println(przepowiednia.getFortune());
 	}
 
 }

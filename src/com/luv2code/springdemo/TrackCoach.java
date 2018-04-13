@@ -10,6 +10,7 @@ public class TrackCoach implements Coach {
 	
 	public TrackCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
+		
 	}
 	
 	@Override
